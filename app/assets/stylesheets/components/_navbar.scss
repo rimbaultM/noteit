@@ -1,12 +1,12 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.navbar {
+    background-image: url("https://res.cloudinary.com/dc9pm7uj8/image/upload/v1588607332/Note%20iT/ecran2_yqpicl.jpg");
+  h1{
+    font-size: 40px;
+    color: white;
+    font-family: 'Damion', cursive;
+  }
 }
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.logo-navbar{
+  width: 50px;
+  height:50px;
 }

@@ -1,0 +1,22 @@
+<div class="navbar">
+  <img class="logo-navbar" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1588607462/Note%20iT/shadow_lhxsud.png" alt="">
+  <h1>Note'it</h1>
+  <div class="avatar-deco">
+    <%= cl_image_tag current_user.photo.key, class: 'avatar'%>
+    <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
+  </div>
+</div>
+
+
+<div class="notes">
+  <div class="notes-title">
+    <h2>Mes notes</h2>
+    <% @notes.each do |note| %>
+      <div class="my-note">
+        <h3> <%= note.title%> </h3>
+        <p> <%= note.content%> </p>
+        <p> <%= note.date%> </p>
+      </div>
+    <% end %>
+  </div>
+</div>
