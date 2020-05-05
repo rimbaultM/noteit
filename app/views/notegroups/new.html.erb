@@ -1,0 +1,25 @@
+<div class="navbar">
+  <img class="logo-navbar" src="https://res.cloudinary.com/dc9pm7uj8/image/upload/v1588607462/Note%20iT/shadow_lhxsud.png" alt="">
+  <h1>Note'it</h1>
+  <div class="avatar-deco">
+    <%= cl_image_tag current_user.photo.key, class: 'avatar'%>
+    <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
+  </div>
+</div>
+
+
+<div class="notes">
+  <div>
+    <div class="notes-title">
+      <h2>Nouvelle groupe note</h2>
+    </div>
+      <div class="container form_new">
+       <%= simple_form_for @notegroup do |f| %>
+        <%= f.input :title, placeholder: "Ajouter un tirte a votre nouvelle note ?"%>
+        <%= f.submit "Créer votre groupnote", class: "button" %>
+      <% end %>
+    </div>
+
+
+</div>
+

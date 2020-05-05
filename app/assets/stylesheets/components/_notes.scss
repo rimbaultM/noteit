@@ -1,13 +1,66 @@
 .notes{
-  background-color: grey;
-  opacity: 0.6;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.12);
+  background-color: rgba(240,240,240,0.8);
   width: 60vw;
   display: block;
-  margin: 150px auto;
+  margin: 40px auto;
   border-radius: 8px;
+}
+.add-notegroup{
+  text-align: center;
+  font-size: 50px;
 }
 
 .notes-title{
-  text-align: center;
-  color: white;
-}
+          background-image: url("https://res.cloudinary.com/dc9pm7uj8/image/upload/v1588607332/Note%20iT/ecran2_yqpicl.jpg");
+          position: relative;
+          border-top-right-radius: 8px;
+          border-top-left-radius:8px;
+          text-align: center;
+          h2{
+            color: white;
+            padding: 5px 0;
+            font-family: 'Damion', cursive;
+            margin-bottom: 0;
+          }
+          .add-note{
+            position: absolute;
+            right: 1vw;
+            top: 0;
+            font-size: 35px;
+          }
+        }
+    .my-note{
+      border-bottom: 1px solid grey;
+    }
+      .my-note-space{
+        display:flex;
+        justify-content: space-between;
+        margin: 10px 10px 0 10px;
+      }
+      .my-note-space-2{
+        display:flex;
+        justify-content: space-between;
+        margin: 2px 10px 0 10px;
+      }
+      .my-note-space-3{
+        display:flex;
+        justify-content: space-between;
+        margin: 2px 10px 0 10px;
+      }
+      .note-title{
+        font-family: 'Damion', cursive;
+      }
+      .note-date{
+        margin-top: 8px;
+      }
+      .note-done-false{
+        color: red;
+        margin-left: 10px;
+        margin-bottom: 10px;
+      }
+      .note-done-true{
+        color: green;
+        margin-left: 10px;
+        margin-bottom: 10px;
+      }

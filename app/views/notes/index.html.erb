@@ -6,17 +6,51 @@
     <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
   </div>
 </div>
-
+<div class="add-notegroup">
+  <%= link_to "+", new_notegroup_path %>
+</div>
 
 <div class="notes">
-  <div class="notes-title">
-    <h2>Mes notes</h2>
+  <div>
+    <% @notegroups.each do |notegroup| %>
+    <div class="notes-title">
+
+        <h2><%= notegroup.title%></h2>
+        <% if current_user == notegroup.user %>
+            <%= link_to notegroup_path(notegroup), method: :delete, data: { confirm: 'Are you sure?' } do%>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          <% end %>
+        <%= link_to "+", new_note_path, class: "add-note"%>
+
+    </div>
+
     <% @notes.each do |note| %>
       <div class="my-note">
-        <h3> <%= note.title%> </h3>
-        <p> <%= note.content%> </p>
-        <p> <%= note.date%> </p>
+        <div class="my-note-space">
+
+          <h3 class="note-title"> <%= note.title%> </h3>
+          <p class="note-date"> <%= note.date%> </p>
+        </div>
+        <div class="my-note-space-2">
+          <p class="note-content"> <%= note.content%> </p>
+          <%= cl_image_tag note.user.photo.key, class: 'avatar-note'%>
+        </div>
+        <div class="my-note-space-3">
+          <% if note.done == false %>
+            <i class="fas fa-times note-done-false"></i>
+          <% else %>
+            <i class="far fa-check-circle note-done-true"></i>
+          <% end %>
+          <% if current_user == note.user %>
+            <%= link_to note_path(note), method: :delete, data: { confirm: 'Are you sure?' } do%>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     <% end %>
+  <% end %>
   </div>
 </div>
+
