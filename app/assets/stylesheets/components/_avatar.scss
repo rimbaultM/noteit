@@ -23,3 +23,30 @@
   height: 30px;
   border-radius: 50%;
 }
+.avatar-note-waiting{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid red;
+}
+.avatar-note-chef{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.explain-waiting{
+  padding: 3px 3px 0 3px;
+  p{
+    color: white;
+  }
+  display:none;
+}
+.fa-crown{
+  color: gold;
+  position: relative;
+  top: -20px;
+  right: -31px;
+}
+.member-position{
+  text-align: left;
+}

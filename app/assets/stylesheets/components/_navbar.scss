@@ -10,3 +10,47 @@
   width: 50px;
   height:50px;
 }
+.invitation{
+  color: white;
+  cursor: pointer;
+  position: relative;
+  h4{
+    font-family: 'Damion', cursive;
+  }
+  margin: 0 15px;
+  display:flex;
+  align-items: center;
+}
+.invitation-block{
+  width: 300px;
+  padding-bottom: 10px;
+  background-color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display:none;
+  position: absolute;
+  top: 62px;
+  left: -70px;
+  z-index: 1;
+  h1{
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    }
+}
+.invitation-block-update{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.avatar-group{
+  display:flex;
+  justify-content: space-between;
+}
+.title{
+  margin-left: 150px;
+}
+
+.notif{
+  color: red;
+}

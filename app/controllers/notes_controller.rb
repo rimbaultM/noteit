@@ -1,41 +1,37 @@
 class NotesController < ApplicationController
-  def index
-    @notes = Note.all
-
-    @notegroups = Notegroup.all
-
-  end
-
-  # def show
-  #   @note = Note.find(params[:id])
-  # end
 
   def new
     @note = Note.new
     @user = current_user
-
-
+    @notegroup = Notegroup.find(params[:notegroup_id])
   end
 
+  # def show
+  #   @notegroup = Notegroup.find(params[:notegroup_id])
+  #   @note = Note.find(params[:note_id])
+  # end
+
+
   def create
+    @notegroup = Notegroup.find(params[:notegroup_id])
     @note = Note.new(note_params)
+    @note.notegroup = @notegroup
     @user = current_user
     @note.user = @user
     if @note.save
-      redirect_to notes_path
+      redirect_to notegroups_path
     else
       render :new
     end
-
-
   end
 
   def destroy
-    @note = Note.find(params[:id])
-    @user = @note.user
-    @note.destroy
-    redirect_to notes_path
+      @note = Note.find(params[:id])
+      @note.destroy
+      redirect_to notegroups_path
   end
+
+private
 
   def note_params
     params.require(:note).permit(:title, :content, :date)
