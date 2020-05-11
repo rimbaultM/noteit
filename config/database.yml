@@ -83,3 +83,5 @@ production:
   database: noteit_production
   username: noteit
   password: <%= ENV['NOTEIT_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
+
